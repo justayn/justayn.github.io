@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome to League of Legends!</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    header {
+            background-color: #000000;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+    }
+    header img {
+            max-width: 50px; 
+            height: auto;
+            margin-right: 20px;
+    }
+
+    video#bgVideo {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .content {
+       display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 10%;
+            overflow: hidden; 
+            font-size: 2rem;
+            font-family: 'Friz Quadrata', 'Times New Roman', serif; 
+    }
+
+    .button {   
+        background-color: #7B6A34; 
+        color: white; 
+        padding: 10px 20px; 
+        border: none; 
+        border-radius: 5px; 
+        font-size: 1em; 
+        cursor: pointer; 
+        text-decoration: none; 
+        transition: background-color 0.3s; 
+    }
+    .button:hover {
+        background-color: #5E5228; 
+    }
+
+    .content p {
+            font-size: 1.2em;
+            max-width: 1200px;
+            margin: 20px 0;
+    }
+
+    p:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+    }
+  </style>
+</head>
+<body>
+
+    <video id="bgVideo" autoplay loop>
+        <source src="mv.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
+    <script>
+        const bgVideo = document.getElementById('bgVideo');
+    
+        
+        bgVideo.volume = 0.1;
+    
+        
+        bgVideo.play().catch(() => {
+            
+            document.body.addEventListener('click', () => {
+                bgVideo.play();
+            }, { once: true });
+        });
+    </script>
+  <header>
+    <img src="lol-logo.png" alt="Logo" />
+    </header>
+
+  <div class="content">
+    <img src="league logo.png" alt="League Logo" style="max-width: 25%; height: 25%; display: block; margin: 0 auto;">
+    
+    <p style="color: white; font-size: 2rem; margin-top: 20px; text-align: center; background-color: rgba(0, 0, 0, 0.7); padding: 15px; border-radius: 10px; display: inline-block;">
+        Play League of Legends, a team-based strategy game with 160+ champions. Outsmart opponents and claim victory in fast-paced 5v5 battles.
+    </p>
+
+    <a href="https://www.leagueoflegends.com/en-ph/" target="_blank" rel="noopener noreferrer" class="button" style="margin-top: 20px; display: inline-block;">Play Now!</a>
+    
+    
+</div>
+    
+    
+<script type="module">
+    import Chatbox from 'https://cdn.jsdelivr.net/npm/@chaindesk/embeds@latest/dist/chatbox/index.js';
+  
+    const widget = await Chatbox.initBubble({
+      agentId: 'cm9r5ayue04ibiehw07oseh75',
+      
+        
+
+    });
+  
+    // open the chat bubble
+    widget.open();
+  
+    // close the chat bubble
+    widget.close()
+  
+    // or 
+    widget.toggle()
+  </script>
+
+</body>
+</html>
